@@ -14,52 +14,52 @@
 
 <body>
 <div id="particles-js" >
-<div class="container">
-    <h1 class="navbar navbar-light" style="background-color: #ffdbaa;">Covid-19 Weekly Tracker Trend</h1>
-    <p>Keep track of weekly number trends with Covid-19</p>
+    <div class="container">
+        <h1 class="navbar navbar-light" style="background-color: #ffdbaa;">Covid-19 Weekly Tracker Trend</h1>
+        <p>Keep track of weekly number trends with Covid-19</p>
 
-<div class="jumbotron" style="background-color: mediumaquamarine">
-    <h1 class="display-4"  th:text="${totalReportedCases}"></h1>
-    <p class="lead">Total cases reported till now</p>
-    <hr class="my-4">
-    <p>
-        <span>New cases reported since last day: </span>
-        <span th:text="${totalNewCases}"></span>
-        <br>
-        <span>Total deaths: </span>
-        <span th:text="${totalDeaths}"></span>
-        <br>
-        <span>Total recoveries: </span>
-        <span th:text="${totalRecovery}"></span>
-    </p>
-</div>
+        <div class="jumbotron" style="background-color: mediumaquamarine">
+            <h1 class="display-4"  th:text="${totalReportedCases}"></h1>
+            <p class="lead">Total cases reported till now</p>
+            <hr class="my-4">
+            <p>
+                <span>New cases reported since last day: </span>
+                <span th:text="${totalNewCases}"></span>
+                <br>
+                <span>Total deaths: </span>
+                <span th:text="${totalDeaths}"></span>
+                <br>
+                <span>Total recoveries: </span>
+                <span th:text="${totalRecovery}"></span>
+            </p>
+        </div>
 
 
 
-<table class="table table-striped table-hover">
-    <thead class="thead-dark">
-    <tr>
-        <th>Country</th>
-        <th>State(if any)</th>
-        <th>Total Cases Reported</th>
-        <th>Change since last day</th>
-        <th>Change since last week</th>
-        <th>Infection % increase since last week</th>
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>Country</th>
+                <th>State/Province(if any)</th>
+                <th>Total Cases Reported</th>
+                <th>Change since last day</th>
+                <th>Change since last week</th>
+                <th>Infection % increase since last week</th>
 
-    </tr>
-    </thead>
-    <tr th:each="locationData : ${locationDatas}" >
-        <td th:text="${locationData.country}"></td>
-        <td th:text="${locationData.state}"></td>
-        <td th:text="${locationData.latestTotalCases}">0</td>
-        <td th:text="${locationData.diffFromPrevDay}">0</td>
-        <td th:text="${locationData.diffFromPrevWeek}">0</td>
-        <td th:text="${locationData.percentChange}">0</td>
+            </tr>
+            </thead>
+            <tr th:each="locationData : ${locationDatas}" >
+                <td th:text="${locationData.country}"></td>
+                <td th:text="${locationData.state}"></td>
+                <td th:text="${locationData.latestTotalCases}">0</td>
+                <td th:text="${locationData.diffFromPrevDay}">0</td>
+                <td th:text="${locationData.diffFromPrevWeek}">0</td>
+                <td th:text="${locationData.percentChange}">0</td>
 
-    </tr>
+            </tr>
 
-</table>
-</div>
+        </table>
+    </div>
 </div>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/8.0.1/firebase-app.js"></script>

@@ -73,6 +73,8 @@ public class Covid19DataService {
             String state =record.get("Province/State");
             locationDatas.setCountry(record.get("Country/Region"));
             locationDatas.setState(record.get("Province/State"));
+            locationDatas.setLatitude(Double.parseDouble(record.get("Lat")));
+            locationDatas.setLongitude(Double.parseDouble(record.get("Long")));
 
 
             int latestCases = Integer.parseInt(record.get(record.size() - 1));

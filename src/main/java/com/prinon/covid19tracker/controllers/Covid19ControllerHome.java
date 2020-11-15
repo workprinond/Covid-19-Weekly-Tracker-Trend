@@ -16,7 +16,7 @@ public class Covid19ControllerHome {
     Covid19DataService covid19DataService;
 
     @GetMapping("/")
-    public String home(Model model) {
+        public String map(Model model) {
         List<LocationData> allDatas = covid19DataService.getAllData();
         List<LocationData> deathDatas = covid19DataService.getDeathData();
         List<LocationData> recoveryDatas = covid19DataService.getrecoveryData();
@@ -30,5 +30,7 @@ public class Covid19ControllerHome {
         model.addAttribute("totalDeaths",totalDeaths);
         model.addAttribute("totalRecovery",totalRecovery);
         return "home";
+        }
     }
-}
+
+
